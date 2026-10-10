@@ -1,0 +1,22 @@
+[project]
+name = "Tabu-Search-Class"
+version = "0.1.0"
+description = "A memory-based metaheuristic for advanced optimization"
+readme = "README.md"
+authors = [
+    { name = "Carlos Yazid", email = "140143753+CarlosYazid@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "ortools>=9.15.6755",
+    "pandas>=3.0.6",
+    "pytest>=9.1.1",
+    "scipy>=1.18.1",
+]
+
+[project.scripts]
+tabu-search-class = "tabu_search_class:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
