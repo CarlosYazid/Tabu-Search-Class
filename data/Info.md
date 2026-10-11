@@ -1,19 +1,20 @@
-# About data
+# Acerca de los datos
 
-This dataset provides all required inputs to formulate and solve a Capacitated Vehicle Routing Problem (CVRP) for vaccine and medical-supply distribution from a central depot (MSO) to ten health centers in Tripoli, Libya. It includes a complete 11×11 time matrix, 11×11 distance matrix, demand values for each facility, and fleet parameters used to model optimal distribution routes with Google OR-Tools.
+Este conjunto de datos proporciona toda la información necesaria para formular y resolver un problema de rutas de vehículos con capacidad limitada (CVRP) para la distribución de vacunas y suministros médicos desde un depósito central (MSO) a diez centros de salud en Trípoli, Libia. Incluye una matriz de tiempo completa de 11×11, una matriz de distancia de 11×11, los valores de demanda para cada centro y los parámetros de la flota utilizados para modelar rutas de distribución óptimas con Google OR-Tools.
 
-The objective of the dataset is to support research in public-health logistics, route optimization, vehicle routing heuristics, and real-world CVRP benchmarking. The dataset is designed for reproducible experiments involving total-time minimization, cost analysis, and capacity-constrained distribution.
+El objetivo del conjunto de datos es apoyar la investigación en logística de salud pública, optimización de rutas, heurísticas de enrutamiento de vehículos y evaluaciones comparativas del CVRP en el mundo real. El conjunto de datos está diseñado para experimentos reproducibles que involucran la minimización del tiempo total, el análisis de costos y la distribución con restricciones de capacidad.
 
-This dataset was used to compute optimized routes using OR-Tools with PATH_CHEAPEST_ARC and GUIDED_LOCAL_SEARCH, producing feasible delivery routes that satisfy all demand while minimizing time. It is suitable for students, researchers, and practitioners in transportation science, operations research, and humanitarian logistics.
+Este conjunto de datos se utilizó para calcular rutas optimizadas mediante OR-Tools con los algoritmos PATH_CHEAPEST_ARC y GUIDED_LOCAL_SEARCH, lo que generó rutas de entrega viables que satisfacen toda la demanda al tiempo que minimizan el tiempo. Es adecuado para estudiantes, investigadores y profesionales en ciencias del transporte, investigación operativa y logística humanitaria.
 
-The dataset includes:
+El conjunto de datos incluye:
 
-- Location & Demand Table 11 nodes (MSO depot + 10 health centers) Total demand: 38,000 units Per-center demand used to enforce capacity ≤ 6,000 units per vehicle
+- Tabla de ubicaciones y demanda: 11 nodos (depósito de la MSO + 10 centros de salud). Demanda total: 38 000 unidades. La demanda por centro se utiliza para garantizar que la capacidad sea ≤ 6 000 unidades por vehículo
 
-- Time Matrix (minutes) 11×11 symmetric travel time matrix Used directly as OR-Tools arc cost (solver objective = minimize total time)
+- Matriz de tiempos (minutos): matriz simétrica de tiempos de viaje de 11×11. Se utiliza directamente como costo de arco en OR-Tools (objetivo del solucionador = minimizar el tiempo total)
 
-- Distance Matrix (kilometers) 11×11 distance matrix Used for reporting and operating cost calculations Not used as the optimization objective
 
-- Fleet Parameters 15 vehicles Capacity: 6,000 units each Depot index: 0 Cost per km: 0.8 Cost per minute: 0.3
+- Matriz de distancias (kilómetros): matriz de distancias de 11×11. Se utiliza para la generación de informes y el cálculo de costos operativos. No se utiliza como objetivo de optimización
 
-This dataset is suitable for: CVRP and VRP benchmarking Public-health distribution modeling OR-Tools VRP tutorials and demonstrations Route optimization algorithm comparison GIS-free transportation modeling Cost optimization studies
+- Parámetros de la flota: 15 vehículos. Capacidad: 6,000 unidades cada uno. Índice de depósito: 0. Costo por km: 0.8. Costo por minuto: 0.3
+
+Este conjunto de datos es adecuado para: comparativas de CVRP y VRP; modelación de distribución en salud pública; tutoriales y demostraciones de VRP en OR-Tools; comparación de algoritmos de optimización de rutas; modelación de transporte sin SIG; estudios de optimización de costos
