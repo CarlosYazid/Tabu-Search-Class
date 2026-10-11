@@ -1,13 +1,12 @@
 
-def test_vecindario(X_ejemplo, vecindario, aplicar):
+def test_vecindario(n, vecindario, aplicar):
     """Verifica que la función vecindario() devuelva los 9 movimientos esperados."""
 
-    movs = vecindario(X_ejemplo)
+    movs = vecindario(n)
     assert len(movs) == 9, f"Debe haber n - 1 = 9 movimientos y hay {len(movs)}"
     assert all(j == i + 1 and 0 <= i < 9 for i, j in movs) and len(set(movs)) == 9, "Deben ser las parejas (i, i + 1)"
     
     print("TODO 1 correcto: 9 vecinos por solución")
-    print("Ejemplo:", X_ejemplo, "con el movimiento (0, 1) ->", aplicar(X_ejemplo, (0, 1)))
 
 def test_es_tabu_y_actualizar_tabu(X_ejemplo, es_tabu, actualizar_lista_tabu, aplicar):
     """Verifica que la función es_tabu() y actualizar_lista_tabu() funcionen correctamente."""
