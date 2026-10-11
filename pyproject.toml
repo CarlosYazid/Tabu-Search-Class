@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Carlos Yazid", email = "140143753+CarlosYazid@users.noreply.github.com" }
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.13.16"
 dependencies = [
     "matplotlib>=3.11.2",
     "ortools>=9.15.6755",
