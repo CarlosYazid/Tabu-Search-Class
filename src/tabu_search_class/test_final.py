@@ -6,7 +6,7 @@ def test_data_is_consistent(data: dict):
     assert max(data["demand"]) <= data["capacity"]
 
 def test_external_answer_quality_vs_tabu_search(
-    data: dict, external_answer, reference: Solution, tolerance: float
+    data: dict, external_answer, reference: dict, tolerance: float
 ):
     ext = evaluate_routes(data, external_answer)
     _assert_feasible(data, ext)

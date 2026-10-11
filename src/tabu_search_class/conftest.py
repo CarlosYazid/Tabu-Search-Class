@@ -37,15 +37,3 @@ def data() -> dict:
         "cost_per_km": float(p["Cost per km"]),
         "cost_per_min": float(p["Cost per minute"]),
     }
-
-@pytest.fixture(scope="session")
-def optimizer():
-    """Optimizador (OR-Tools) con sus parámetros: ESTRICTAMENTE Tabu Search.
-    """
-    params = {
-        "first_solution_strategy": routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC,
-        "local_search_metaheuristic": routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH,
-        "time_limit_seconds": 10,
-    }
-
-    return solve_with_tabu_search(data, params)

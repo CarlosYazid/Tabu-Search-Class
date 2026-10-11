@@ -14,8 +14,15 @@ def evaluate_routes(data: dict, routes: list[list[int]]) -> tuple:
     cost = data["cost_per_km"] * total_dist + data["cost_per_min"] * total_time
     return routes, total_time, total_dist, cost
 
-def solve_with_tabu_search(data: dict, params: dict) -> tuple:
+def solve_with_tabu_search(data: dict, params: dict | None = None) -> tuple:
     """Resuelve el CVRP con OR-Tools; la búsqueda local es Tabu Search."""
+
+    if params is None:
+        params = {
+            "first_solution_strategy": routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC,
+            "local_search_metaheuristic": routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH,
+            "time_limit_seconds": 30,
+        }
 
     n = len(data["names"])
     manager = pywrapcp.RoutingIndexManager(n, data["num_vehicles"], data["depot"])
